@@ -1,24 +1,35 @@
 #pragma once
 
-#include "quantum.h"
 #include "action.h"
+#include "quantum.h"
 #include "version.h"
 /* #include "oneshot.h" */
 
 enum layers {
   _BASE,
-  _SYM,
   _NUM,
-  _NUMSYM,
   _NAV,
+  _SYM,
+  _MODS,
   _DEVICE,
 };
 
 #define xxxxxxx KC_NO
 
-#define LT_SPC LT(_NUMSYM, KC_SPC)
-#define LT_BSPC LT(_NAV, KC_BSPC)
+// thumbs
+#define LT_SPC LT(_NAV, KC_SPC)
+#define LT_BSPC LT(_SYM, KC_BSPC)
 #define LT_ESC LT(_NAV, KC_ESC)
+
+#define DN_CTRL LCTL_T(KC_DOWN)
+
+#define ESC_SYM LT(_SYM, KC_ESC)
+#define COLN_SYM LT(_SYM, KC_COLN)
+#define TAB_MOD LT(_MODS, KC_TAB)
+
+#define C_TAB C(KC_TAB)
+#define S_TAB S(KC_TAB)
+#define SC_TAB S(C(KC_TAB))
 
 #define KC_CA LCTL_T(KC_A)
 #define KC_AR LALT_T(KC_R)
@@ -33,9 +44,9 @@ enum layers {
 #define MT_BTN1 LGUI_T(KC_BTN1)
 #define MT_SPC LT(_NAV, KC_SPC)
 #define MT_BSPC MO(_NAV)
-#define SFT OSM(MOD_LSFT)
+#define MY_LSFT OSM(MOD_LSFT)
 #define ALT OSM(MOD_LALT)
-#define MY_RALT OSM(MOD_RALT)
+#define MY_LALT OSM(MOD_LALT)
 #define CTRL OSM(MOD_LCTL)
 #define GUI OSM(MOD_LGUI)
 #define DN_CTRL LCTL_T(KC_DOWN)

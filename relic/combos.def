@@ -1,63 +1,113 @@
 // Left top row
-COMB(del,               KC_DEL,         KC_W, KC_F, KC_P)
-
+COMB(q_comb,            KC_Q,           KC_SLSH, KC_W)
+COMB(qu_comb,           QU,             KC_W, KC_F)
+COMB(z_comb,            KC_Z,           KC_F, KC_P)
+COMB(ctrl_w,            C(KC_W),        KC_W, KC_F, KC_P)
+COMB(clear,             CLEAR,          KC_P, KC_B)
 // Right top row
 SUBS(el_str_int,        "#{}"SS_TAP(X_LEFT),  KC_J, KC_L)
+COMB(eql,               KC_EQL,         KC_L, KC_U)
 COMB(backsp,            KC_BSPC,        KC_U, KC_Y)
-COMB(wbacksp,           A(KC_BSPC),        KC_L, KC_U, KC_Y)
+COMB(ctrl_w2,            C(KC_W),        KC_L, KC_U, KC_Y) 
+COMB(rev_rep,           REV_REP,        KC_Y, KC_QUOT)
 
 // Left home row
-COMB(tab,               KC_TAB,         KC_AR, KC_GS)
-COMB(escape,            KC_ESC,         KC_GS, KC_ST)
-COMB(scln,              KC_SCLN,        KC_AR, KC_ST)
-COMB(slsh,              KC_SLSH,        KC_AR, KC_GS, KC_ST)
-
+COMB(ctrl_combo_l,      OS_CTRL,        KC_R, KC_S)
+COMB(escape_sym,        ESC_SYM,        KC_S, KC_T)
+COMB(dquo,              KC_DQUO,        KC_R, KC_T)
+COMB(tab_mod,           TAB_MOD,        KC_R, KC_S, KC_T)
+COMB(del,               KC_DEL,         KC_T, KC_G)
 // Right home row
-COMB(coln,              KC_COLN,        KC_SN, KC_GE)
-COMB(enter,             KC_ENT,         KC_GE, KC_AI)
-COMB(quot,              KC_QUOT,        KC_SN, KC_AI)
-
-// Right bottom row
-COMB(dollar,            KC_DLR,         KC_COMM, KC_DOT)
-COMB(circ,              KC_CIRC,        KC_H, KC_COMM)
-
-// mixed
-COMB(capsword,          CAPSWORD,       KC_GS, KC_GE)
-COMB(xcase,             XCASE,          KC_ST, KC_SN)
-COMB(cancel,            CANCEL,         KC_GS, KC_ST, KC_SN, KC_GE)
+COMB(coln_sym,          COLN_SYM,       KC_N, KC_E)
+COMB(ctrl_combo_r,      OS_CTRL,        KC_E, KC_I)
+COMB(quot,              KC_QUOT,        KC_N, KC_I)
+COMB(ent,               KC_ENT,         KC_N, KC_E, KC_I)
+COMB(save_vim,          SAVE_VIM,       KC_N, KC_E, KC_I, KC_O)
+// Mixed
+COMB(capsword,          CAPSWORD,       KC_S, KC_E)
+COMB(xcase,             XCASE,          KC_T, KC_N)
 
 // Left bottom row
-COMB(cut,               G(KC_X),        KC_Z, KC_X)
-COMB(copy,               G(KC_C),        KC_X, KC_C)
-COMB(paste,               G(KC_V),        KC_C, KC_D)
+COMB(vsp,               VIM_VS,         KC_X, KC_C)
+COMB(gui_combo_l,       OS_GUI,         KC_C, KC_D)
+COMB(lalt,              MY_LALT,        KC_X, KC_D)
+COMB(close_win,         CLOSE_WIN,      KC_X, KC_C, KC_D)
+COMB(shift_combo_l,     KC_LSFT,        KC_D, KC_V)
+// Right bottom row
+COMB(shift_combo_r,     KC_RSFT,        KC_K, KC_H)
+COMB(gui_combo_r,       OS_GUI,         KC_H, KC_LPRN)
+COMB(dlr,               KC_DLR,         KC_LPRN, KC_RPRN)
+COMB(leader,            LEADER,         KC_H, KC_RPRN)
+// COMB(swe,               TG_SWE,         KC_H, KC_LPRN, KC_RPRN)
 
-COMB(lprn,              KC_LPRN,        LT_SPC, KC_L)
-COMB(lbrc,              KC_LBRC,        LT_SPC, KC_SN)
-COMB(lcbr,              KC_LCBR,        LT_SPC, KC_H)
+// Mixed home row + other
+COMB(scln,              KC_SCLN,        KC_S, KC_D)
+// COMB(win_alt,           WIN_ALT,        KC_H, KC_E)
 
-COMB(rprn,              KC_RPRN,        LT_SPC, KC_U)
-COMB(rbrc,              KC_RBRC,        LT_SPC, KC_GE)
-COMB(rcbr,              KC_RCBR,        LT_SPC, KC_COMM)
-
-COMB(mins,              KC_MINS,        LT_SPC, KC_Y)
-COMB(unds,              KC_UNDS,        LT_SPC, KC_AI)
-
-COMB(save_vim,          SAVE_VIM,       KC_SN, KC_GE, KC_AI)
+// Vertical top left
+SUBS(small_left_arrow,  "<-",           KC_F, KC_S)
+SUBS(lt_eq,             "<=",           KC_P, KC_T)
+// Vertical top right
+SUBS(large_right_arrow, "=>",           KC_L, KC_N)
+SUBS(small_right_arrow, "->",           KC_U, KC_E)
+SUBS(pipe_to,           "|>",           KC_Y, KC_I)
+// Vertical bottom left
+COMB(sp,                VIM_SP,         KC_R, KC_X)
+SUBS(gt_eq,             ">=",           KC_T, KC_D)
 
 // Thumbs
-// COMB(num,               NUMWORD,        LT_BSPC, LT_SPC)
-// COMB(num2,               NUMWORD,        KC_CA, KC_AR, KC_GS, KC_ST)
-// COMB(num3,               NUMWORD,        KC_CO, KC_AI, KC_GE, KC_SN)
-// COMB(num_cancel,            CANCEL,         KC_4, KC_5, KC_6)
+COMB(num,               NUMWORD,        LT_SPC, MY_LSFT)
 
-// Thumb numbers
-COMB(e_0,               KC_0,           LT_SPC, KC_CA)
-COMB(e_1,               KC_4,           LT_SPC, KC_X)
-COMB(e_2,               KC_5,           LT_SPC, KC_C)
-COMB(e_3,               KC_6,           LT_SPC, KC_D)
-COMB(e_4,               KC_1,           LT_SPC, KC_AR)
-COMB(e_5,               KC_2,           LT_SPC, KC_GS)
-COMB(e_6,               KC_3,           LT_SPC, KC_ST)
-COMB(e_7,               KC_7,           LT_SPC, KC_W)
-COMB(e_8,               KC_8,           LT_SPC, KC_F)
-COMB(e_9,               KC_9,           LT_SPC, KC_P)
+// Numbers with cross side thumb
+COMB(comb_6,            KC_6,           MY_LSFT, KC_A)
+COMB(comb_4,            KC_4,           MY_LSFT, KC_R)
+COMB(comb_0,            KC_0,           MY_LSFT, KC_S)
+COMB(comb_2,            KC_2,           MY_LSFT, KC_T)
+COMB(comb_8,            KC_8,           MY_LSFT, KC_D)
+COMB(comb_9,            KC_9,           LT_SPC, KC_H)
+COMB(comb_3,            KC_3,           LT_SPC, KC_N)
+COMB(comb_1,            KC_1,           LT_SPC, KC_E)
+COMB(comb_5,            KC_5,           LT_SPC, KC_I)
+COMB(comb_7,            KC_7,           LT_SPC, KC_O)
+// é
+// COMB(comb_e_acut,       E_ACUT,         MY_LSFT, KC_K)
+
+// Symbols with same side thumb
+// Upper
+COMB(comb_tild,         KC_TILD,           LT_SPC, KC_Q)
+COMB(comb_plus,         KC_PLUS,        LT_SPC, KC_W)
+COMB(comb_astr,         KC_ASTR,        LT_SPC, KC_F)
+COMB(comb_exlm,         KC_EXLM,        LT_SPC, KC_P)
+COMB(comb_dot,          KC_DOT,         MY_LSFT, KC_QUOT)
+COMB(comb_hash,         KC_HASH,        MY_LSFT, KC_L)
+COMB(comb_at,           KC_AT,          MY_LSFT, KC_U)
+COMB(comb_circ,         KC_CIRC,           MY_LSFT, KC_Y)
+// Home-row
+COMB(comb_pipe,         KC_PIPE,        LT_SPC, KC_A)
+COMB(comb_lcbr,         KC_LCBR,        LT_SPC, KC_R)
+COMB(comb_rcbr,         KC_RCBR,        LT_SPC, KC_S)
+COMB(comb_mins,         KC_MINS,        LT_SPC, KC_T)
+COMB(comb_bsls,         KC_BSLS,        LT_SPC, KC_G)
+COMB(comb_grv,          KC_GRV,            MY_LSFT, KC_M)
+COMB(comb_ques,         KC_QUES,        MY_LSFT, KC_N)
+COMB(comb_lbrc,         KC_LBRC,        MY_LSFT, KC_E)
+COMB(comb_rbrc,         KC_RBRC,        MY_LSFT, KC_I)
+// Lower
+COMB(comb_labk,         KC_LABK,        LT_SPC, KC_X)
+COMB(comb_rabk,         KC_RABK,        LT_SPC, KC_C)
+COMB(comb_perc,         KC_PERC,        LT_SPC, KC_D)
+COMB(comb_comm,         KC_COMM,        LT_SPC, KC_Z)
+COMB(comb_slsh,         KC_SLSH,        MY_LSFT, KC_K)
+COMB(comb_ampr,         KC_AMPR,        MY_LSFT, KC_H)
+COMB(comb_lprn,         KC_LPRN,        MY_LSFT, KC_LPRN)
+COMB(comb_rprn,         KC_RPRN,        MY_LSFT, KC_RPRN)
+COMB(comb_unds,         KC_UNDS,        MY_LSFT, KC_UNDS)
+
+// Swedish letters with cross side thumb
+// COMB(arng,              KC_ARNG,        MT_SPC, KC_LPRN)
+// COMB(adia,              KC_ADIA,        MT_SPC, KC_RPRN)
+// COMB(odia,              KC_ODIA,        MT_SPC, KC_UNDS)
+
+// Specials
+SUBS(https,             "https://",     LT_SPC, KC_K)
+COMB(ctrl_gui_space,    C(G(KC_SPACE)), LT_SPC, KC_N, KC_E)
