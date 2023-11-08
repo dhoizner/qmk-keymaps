@@ -228,7 +228,7 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
   case OS_ALT:
   case OS_GUI:
   case TAB_MOD:
-  case MYLSFT:
+  case MY_LSFT:
     return true;
   default:
     return false;
