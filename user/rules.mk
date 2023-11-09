@@ -5,6 +5,7 @@ SRC += layermodes.c
 SRC += casemodes.c
 SRC += taphold.c
 SRC += oneshot.c
+SRC += repeat.c
 
 VPATH += keyboards/gboards
 

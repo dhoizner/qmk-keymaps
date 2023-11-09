@@ -1,5 +1,5 @@
 // Left top row
-COMB(q_comb,            KC_Q,           KC_SLSH, KC_W)
+COMB(q_comb,            KC_Q,           REPEAT, KC_W)
 COMB(qu_comb,           QU,             KC_W, KC_F)
 COMB(z_comb,            KC_Z,           KC_F, KC_P)
 COMB(ctrl_w,            C(KC_W),        KC_W, KC_F, KC_P)
@@ -74,7 +74,7 @@ COMB(comb_7,            KC_7,           LT_SPC, KC_O)
 
 // Symbols with same side thumb
 // Upper
-COMB(comb_tild,         KC_TILD,           LT_SPC, KC_Q)
+COMB(comb_tild,         KC_TILD,           LT_SPC, REPEAT)
 COMB(comb_plus,         KC_PLUS,        LT_SPC, KC_W)
 COMB(comb_astr,         KC_ASTR,        LT_SPC, KC_F)
 COMB(comb_exlm,         KC_EXLM,        LT_SPC, KC_P)

@@ -4,6 +4,7 @@
 #include "keycodes.h"
 #include "layermodes.h"
 #include "oneshot.h"
+#include "repeat.h"
 #include "taphold.h"
 #include "wrappers.h"
 

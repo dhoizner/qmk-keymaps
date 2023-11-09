@@ -8,7 +8,7 @@ bool is_caps_swapped(void) { return swap_caps_escape; }
 
 void tap16_repeatable(uint16_t keycode) {
   tap_code16(keycode);
-  // register_key_to_repeat(keycode);
+  register_key_to_repeat(keycode);
 }
 
 bool process_caps(bool key_down) {
@@ -503,7 +503,7 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
     // Extra register here to allow fast rolls without waiting for tap hold
     // (which will also overwrite this).
     if (record->event.pressed) {
-      // register_key_to_repeat(keycode);
+      register_key_to_repeat(keycode);
     }
     return false;
   }
@@ -596,14 +596,14 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
       disable_num_word();
     }
     return false;
-    // case LEADER:
-    //   start_leading();
-    //   return false;
-    // case REPEAT:
-    //   // Enable fast UI rolls with repeat key
-    //   end_tap_hold();
-    //   update_repeat_key(record);
-    //   return false;
+  // case LEADER:
+  //   start_leading();
+  //   return false;
+  case REPEAT:
+    // Enable fast UI rolls with repeat key
+    end_tap_hold();
+    update_repeat_key(record);
+    return false;
     // case REV_REP:
     //   update_reverse_repeat_key(record);
     //   return false;
@@ -619,15 +619,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   // that manually. Otherwise register keyrepeat here by default
   bool res = _process_record_user(keycode, record);
 
-  // // Space needs some special handling to not interfere with NAV toggling.
-  // // Maybe there's a more general way to do this, but I dunno.
-  // if (keycode == MT_SPC) {
-  //     if (!record->event.pressed && last_key_down == MT_SPC) {
-  //         register_key_to_repeat(KC_SPC);
-  //     }
-  // } else if (res && record->event.pressed) {
-  //     register_key_to_repeat(keycode);
-  // }
+  // Space needs some special handling to not interfere with NAV toggling.
+  // Maybe there's a more general way to do this, but I dunno.
+  if (keycode == LT_SPC) {
+    if (!record->event.pressed && last_key_down == LT_SPC) {
+      register_key_to_repeat(KC_SPC);
+    }
+  } else if (res && record->event.pressed) {
+    register_key_to_repeat(keycode);
+  }
 
   process_oneshot_post(keycode, record);
 
