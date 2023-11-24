@@ -1,3 +1,6 @@
 [submodule "qmk_firmware"]
 	path = qmk_firmware
 	url = https://github.com/qmk/qmk_firmware.git
+[submodule "wylderbuilds_qmk"]
+	path = wylderbuilds_qmk
+	url = https://github.com/bullwinkle3000/vial-qmk.git
